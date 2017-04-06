@@ -302,28 +302,7 @@
 
 
             //behavior when buttons are clicked
-            
-                if(!isClicked && newStyles.addEventListener("click", function(){
-
-
-               changeStyles();
-
-            }));
-            
-            //implement later
-            $(document).on('click', '.someclass', function() {
-  doStuff();
-});
-
-            
-                if(isClicked && newStyles.addEventListener("click", function(){
-
-
-               revertStyles();
-
-            }));
-           
-            
+            newStyles.onclick = onAndOff;
             
             if(next.addEventListener("click", function(){
 
@@ -366,21 +345,20 @@
                 var image3 = document.querySelector(".img4").src="http://i.imgur.com/ha3FvJ5.jpg";
             }
 
-        
-                
-            function changeStyles(){
-                
-                isClicked = true; 
-                
-             document.getElementsByTagName("header")[0].
+
+            function onAndOff(){
+
+              document.getElementsByTagName("header")[0].
               style="opacity:0.3";
                 
-            document.querySelector(".outer-box").removeAttribute("display");
-//                
-//            document.querySelector(".button-change").style="display:none";
-//            
-//            document.querySelector(".products").style="border:2px solid #FFDB94";
-                
+            document.querySelector(".outer-box").style="display:none";
+               
+           document.querySelector(".button-change").style="visibility:hidden";
+           
+           document.querySelector(".products").style="border:2px solid #FFDB94";
+
+           document.querySelector(".btn-warning").onclick = revertStyles;
+           
             }
             
             
@@ -390,15 +368,17 @@
                            //change header
                  console.log("change styles fired");
                 
-//             document.getElementsByTagName("header")[0].
-//              style="opacity:1.0";
-//                
-//            document.querySelector(".outer-box").style="display:initial";
-//                
-//            document.querySelector(".button-change").style="display:initial";
-//            
-//            document.querySelector(".products").style="border:2px solid #cccccc";
-//                
+            document.getElementsByTagName("header")[0].
+             style="opacity:1.0";
+               
+           document.querySelector(".outer-box").style="display:initial";
+               
+           document.querySelector(".button-change").style="visibility:visible";
+           
+           document.querySelector(".products").style="border:2px solid #cccccc";
+
+           
+            document.querySelector(".btn-warning").onclick = onAndOff; 
             }
             
             /**End Outside Functions**/  
