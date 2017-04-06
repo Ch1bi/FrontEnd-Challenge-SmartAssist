@@ -1,244 +1,324 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    
-    
-    <title>SmartAssistant FrontEnd Task</title>
-    
-    <style>
-    
-        body{
-            
-            display:flex;
-            flex-direction: column;
-        }
-        
-        .header{
-            
-            align-self: center;
-        }
-        
-        
-        /*Carousel Styles*/
-        
-       
-        .outer-box{
-            
-           align-self: center;
-            width:75%;
-            border: 2px solid #cccccc;
-        }
-        
-        #question{
-            
-            text-align: center;
-            font-weight: bold;
-            color:rebeccapurple;
-        }
-        
-        .buttons{
-            
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-top:0.5em;
-        }
-        
-        .next{
-            
-            margin-left:1em;
-             background-color:purple;
-            color:white;
-            
-        }
-        
-        .prev{
-            
-            background-color:purple;
-            color:white;
-        }
-        
-        .next:hover{
-            
-            opacity: 0.5;
-        }
-        
-        .prev:hover{
-            
-            opacity:0.5;
-        }
-   
-/* End Carousel Styles*/
-        
-        
-        
-     /*product styles*/
-        
-        .products{
-            
-            width:75%;
-            border: 1px solid #cccccc;
-            align-self: center;
-        }
-        
-        .product-imgs{
-            
-            align-self: flex-start;
-            margin-left:3em;
-        }
-       
-        
-        /*End product styles*/
-        
-        .form-check{
-            
-            margin-left: 3em;
-        }
-        
-    </style>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<body>
-    
-<header class="header">
 
-    <img src="http://i.imgur.com/KfQJc1A.jpg">
-    </header>
-    &nbsp;
-    
-    
-    <div class="outer-box">
-    <div id="question">Welche Gesichtsform haben Sie?</div>
-            
-        <div id="images">
-       
-        <img class="img1" src="http://i.imgur.com/NZy1l15.jpg" alt="Woman1">
-        <img class="img2" src="http://i.imgur.com/bVvfMhb.jpg" alt="Woman2">
-        <img class="img3" src="http://i.imgur.com/jnN9ECI.jpg" alt="Woman3">
-        <img class="img4" src="http://i.imgur.com/ha3FvJ5.jpg" alt="Woman4">
-        </div>
-    
-    </div>
-    
-        <div class="buttons">
-        <div id="1" class="prev">Prev</div>
-        <div id="2" class="next">Next</div>
-           
-        </div>
-    
-    <div class="products">
-        
-        <div class="product-imgs">
-            <img src="http://i.imgur.com/kHb2VIR.jpg" alt="stylish glasses" width="200">
-        </div>
-  
-        
-        <!--form-->
-        
-        <div class="form-check">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-    Navy Blue
-  </label>
-</div>
-<div class="form-check">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-   Volcano Red
-  </label>
-</div>
-<div class="form-check disabled">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-    Space Grey
-  </label>
-</div>
 
-<!--End Form-->
- 
-    
-    </div>
+        <title>SmartAssistant FrontEnd Task</title>
 
-    <script>
-        
-        //questions to be displayed onClick
-        var questions=["Welche Gesichtsform haben Sie?","Welche Anforderungen stellan Sie an die Fassung?"]
-        
-        //get the question div
-        var qDiv = document.getElementById("question");
-        
-        //get fourth starting image
-        var fourthImage = document.querySelector(".img4");
-        
-        //get images
-        var loadOfImages = document.getElementById("images");
-   
-        
-        //elements to be manipulated - buttons
-        var prev = document.getElementById("1");
-        var next = document.getElementById("2");
-        
-        
-        //behavior when buttons are clicked
-        if(next.addEventListener("click", function(){
+        <style>
+
+            body{
+
+                display:flex;
+                flex-direction: column;
+            }
+
+            .header{
+
+                align-self: center;
+            }
+
+
+            /*Carousel Styles*/
+
+
+            .outer-box{
+
+               align-self: center;
+                width:75%;
+                border: 2px solid #cccccc;
+            }
+
+            #question{
+
+                text-align: center;
+                font-weight: bold;
+                color:rebeccapurple;
+            }
+
+            .buttons{
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-top:0.5em;
+            }
+
+            .next{
+
+                margin-left:1em;
+                 background-color:purple;
+                color:white;
+
+            }
+
+            .prev{
+
+                background-color:purple;
+                color:white;
+            }
+
+            .next:hover{
+
+                opacity: 0.5;
+            }
+
+            .prev:hover{
+
+                opacity:0.5;
+            }
+
+    /* End Carousel Styles*/
+
+
+
+         /*product styles*/
+
+            .products{
+
+                width:75%;
+                border: 1px solid #cccccc;
+                align-self: center;
+                margin-top:1em;
+            }
+            
+              .product-container{
+
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            .product-imgs{
+
+                margin-left:3em;
+                align-self: center;
+            }
+
+            /*Checkbox styles*/
+            
+            .checks{
+                
+                display: flex;
+                flex-direction: column;
+            }
+            
+               .checkbox-inline:nth-child(1){
+                
+          
+                margin: 3em 0 0 1em; 
+                   
+
+            }
             
             
-            prev.style.display="initial";
-            next.style.display="none";
-            fourthImage.style.display="none";
-            getNextPics();
-            qDiv.innerHTML="";
-            qDiv.innerHTML=questions[1];
+            .checkbox-inline:nth-child(2){
+                
+          
+                margin: 3em 0 0 1em;
+
+            }
             
-        }));
-        
-        else if(prev.addEventListener("click", function(){
+            .checkbox-inline:nth-child(3){
+
+                margin: 3em 0 0 1em;
+
+            }
+            
+            .checkbox-inline:nth-child(4){
+
+                margin: 3em 0 0 1em;
+
+            }
+            
+            
+            /*End Checkbox styles*/
+            
+            .price{
+                
+                background-color:lightgrey;
+                color:white;
+                margin-left: 1em;
+                text-align: center;
+                font-weight: bold;
+            }
+            
+            .buy{
+                
                
-            next.style.display="initial";
-            prev.style.display="none";
-            getPrevPics();
-            fourthImage.style.display="initial";
-            qDiv.innerHTML="";
-            qDiv.innerHTML=questions[0];            
-        }));
-        
-        /**End button onClicks**/
-        
-        
-        /**Outside Functions **/
-        function getNextPics(){
+             display: flex;
+                flex-direction: column;
+            }
             
-            var image1 = document.querySelector(".img1").src="http://i.imgur.com/coCS3Pu.jpg";
-            var image2 = document.querySelector(".img2").src="http://i.imgur.com/TBFdusX.jpg";
-            var image3 = document.querySelector(".img3").src="http://i.imgur.com/2mVg2VM.jpg";
-        }
-        
-        
-        function getPrevPics(){
+            .btn{
+                
+                align-self: center;
+            }
+           
+
+
+            /*End product styles*/
+
+
+        </style>
+    </head>
+
+    <body>
+
+    <header class="header">
+
+        <img src="http://i.imgur.com/KfQJc1A.jpg">
+        </header>
+        &nbsp;
+
+
+        <div class="outer-box">
+        <div id="question">Welche Gesichtsform haben Sie?</div>
+
+            <div id="images">
+
+            <img class="img1" src="http://i.imgur.com/NZy1l15.jpg" alt="Woman1">
+            <img class="img2" src="http://i.imgur.com/bVvfMhb.jpg" alt="Woman2">
+            <img class="img3" src="http://i.imgur.com/jnN9ECI.jpg" alt="Woman3">
+            <img class="img4" src="http://i.imgur.com/ha3FvJ5.jpg" alt="Woman4">
+            </div>
+
+        </div>
+
+            <div class="buttons">
+            <div id="1" class="prev">Prev</div>
+            <div id="2" class="next">Next</div>
+
+            </div>
+
+        <div class="products">
+            <div class="product-container">
+                
+            <div class="product-imgs">
+                
+                <img src="http://i.imgur.com/kHb2VIR.jpg" alt="stylish glasses" width="200">
+                <div class="price">$299</div>
+                
+                        <div class="buy">
+                    
+                <button type="button" class="btn btn-success">Buy &rarr;</button>
+                    
+                </div>
+            </div>
+               
+            <!--form-->
+        <div class="checks">         
+        <label class="checkbox-inline"><input type="checkbox" value="">Tint</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">UV Protection</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">2-Year Warranty Plan</label>
+         </div>
             
-            var image1 = document.querySelector(".img1").src="http://i.imgur.com/NZy1l15.jpg";
-            var image2 = document.querySelector(".img2").src="http://i.imgur.com/bVvfMhb.jpg";
-            var image3 = document.querySelector(".img3").src="http://i.imgur.com/jnN9ECI.jpg";
-            var image3 = document.querySelector(".img4").src="http://i.imgur.com/ha3FvJ5.jpg";
+    <!--End Form-->
+                <!--Second glasses-->
+                   <div class="product-imgs">
+                
+                <img src="http://i.imgur.com/kHb2VIR.jpg" alt="stylish glasses" width="200">
+                <div class="price">$299</div>
+                
+                        <div class="buy">
+                    <button type="button" class="btn btn-success">Buy &rarr;</button>
+                    </div>
+
+            </div>
+                
+                      <!--form-->
+        <div class="checks">         
+        <label class="checkbox-inline"><input type="checkbox" value="">Tint</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">UV Protection</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">2-Year Warranty Plan</label>
+         </div>
+                <!--End Second Glasses-->
+        </div>
             
-        }
+            
+            </div>
         
-        /**End Outside Functions**/  
-    </script>
-    
-        <!--JQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-    
- <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
- </body>
-    
-</html>
+        
+        <script>
+
+            //questions to be displayed onClick
+            var questions=["Welche Gesichtsform haben Sie?","Welche Anforderungen stellan Sie an die Fassung?"]
+
+            //get the question div
+            var qDiv = document.getElementById("question");
+
+            //get fourth starting image
+            var fourthImage = document.querySelector(".img4");
+
+            //get images
+            var loadOfImages = document.getElementById("images");
+
+
+            //elements to be manipulated - buttons
+            var prev = document.getElementById("1");
+            var next = document.getElementById("2");
+
+
+            //behavior when buttons are clicked
+            if(next.addEventListener("click", function(){
+
+
+                prev.style.display="initial";
+                next.style.display="none";
+                fourthImage.style.display="none";
+                getNextPics();
+                qDiv.innerHTML="";
+                qDiv.innerHTML=questions[1];
+
+            }));
+
+            else if(prev.addEventListener("click", function(){
+
+                next.style.display="initial";
+                prev.style.display="none";
+                getPrevPics();
+                fourthImage.style.display="initial";
+                qDiv.innerHTML="";
+                qDiv.innerHTML=questions[0];            
+            }));
+
+            /**End button onClicks**/
+
+
+            /**Outside Functions **/
+            function getNextPics(){
+
+                var image1 = document.querySelector(".img1").src="http://i.imgur.com/coCS3Pu.jpg";
+                var image2 = document.querySelector(".img2").src="http://i.imgur.com/TBFdusX.jpg";
+                var image3 = document.querySelector(".img3").src="http://i.imgur.com/2mVg2VM.jpg";
+            }
+
+
+            function getPrevPics(){
+
+                var image1 = document.querySelector(".img1").src="http://i.imgur.com/NZy1l15.jpg";
+                var image2 = document.querySelector(".img2").src="http://i.imgur.com/bVvfMhb.jpg";
+                var image3 = document.querySelector(".img3").src="http://i.imgur.com/jnN9ECI.jpg";
+                var image3 = document.querySelector(".img4").src="http://i.imgur.com/ha3FvJ5.jpg";
+
+            }
+
+            /**End Outside Functions**/  
+        </script>
+
+            <!--JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+
+     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+     </body>
+
+    </html>
