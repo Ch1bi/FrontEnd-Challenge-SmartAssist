@@ -79,7 +79,28 @@
         
         
         
-     
+     /*product styles*/
+        
+        .products{
+            
+            width:75%;
+            border: 1px solid #cccccc;
+            align-self: center;
+        }
+        
+        .product-imgs{
+            
+            align-self: flex-start;
+            margin-left:3em;
+        }
+       
+        
+        /*End product styles*/
+        
+        .form-check{
+            
+            margin-left: 3em;
+        }
         
     </style>
 </head>
@@ -98,7 +119,7 @@
             
         <div id="images">
        
-        <img class="img1" src="http://i.imgur.com/NZy1l15.jpg"  alt="Woman1">
+        <img class="img1" src="http://i.imgur.com/NZy1l15.jpg" alt="Woman1">
         <img class="img2" src="http://i.imgur.com/bVvfMhb.jpg" alt="Woman2">
         <img class="img3" src="http://i.imgur.com/jnN9ECI.jpg" alt="Woman3">
         <img class="img4" src="http://i.imgur.com/ha3FvJ5.jpg" alt="Woman4">
@@ -111,6 +132,39 @@
         <div id="2" class="next">Next</div>
            
         </div>
+    
+    <div class="products">
+        
+        <div class="product-imgs">
+            <img src="http://i.imgur.com/kHb2VIR.jpg" alt="stylish glasses" width="200">
+        </div>
+  
+        
+        <!--form-->
+        
+        <div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    Navy Blue
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+   Volcano Red
+  </label>
+</div>
+<div class="form-check disabled">
+  <label class="form-check-label">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+    Space Grey
+  </label>
+</div>
+
+<!--End Form-->
+ 
+    
+    </div>
 
     <script>
         
