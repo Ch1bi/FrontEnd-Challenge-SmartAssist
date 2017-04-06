@@ -6,7 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Bootstrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
 
 
 
@@ -139,8 +140,6 @@
             }
             
             
-            /*End Checkbox styles*/
-            
             .price{
                 
                 background-color:lightgrey;
@@ -161,10 +160,36 @@
                 
                 align-self: center;
             }
+            
+            
+            /*End Checkbox styles*/
+            
            
-
-
             /*End product styles*/
+            
+            /*Media Queries*/
+            
+            @media only screen and (max-width: 500px) {
+                
+            .images {
+                width:50%;
+            }
+                
+                .question{
+                    
+                    width:50%
+                }
+                
+                
+                .header img{
+                    
+                    width:70%;
+               
+                } 
+            
+}
+            
+            /*End Media Queries*/
 
 
         </style>
@@ -177,7 +202,6 @@
         <img src="http://i.imgur.com/KfQJc1A.jpg">
         </header>
         &nbsp;
-
 
         <div class="outer-box">
         <div id="question">Welche Gesichtsform haben Sie?</div>
@@ -225,7 +249,7 @@
                    <div class="product-imgs">
                 
                 <img src="http://i.imgur.com/kHb2VIR.jpg" alt="stylish glasses" width="200">
-                <div class="price">$299</div>
+                <div class="price">$199</div>
                 
                         <div class="buy">
                     <button type="button" class="btn btn-success">Buy &rarr;</button>
@@ -236,14 +260,15 @@
                       <!--form-->
         <div class="checks">         
         <label class="checkbox-inline"><input type="checkbox" value="">Tint</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">UV Protection</label>
-        <label class="checkbox-inline"><input type="checkbox" value="">2-Year Warranty Plan</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Polycarbonate</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Lifetime Warranty</label>
          </div>
                 <!--End Second Glasses-->
         </div>
             
             
             </div>
+            
         
         
         <script>
@@ -317,7 +342,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
 
      <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
      </body>
 
