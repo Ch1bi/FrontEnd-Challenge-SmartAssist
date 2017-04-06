@@ -44,7 +44,7 @@
                 color:rebeccapurple;
             }
 
-            .buttons{
+            .button-change{
 
                 display: flex;
                 flex-direction: row;
@@ -202,6 +202,8 @@
         <img src="http://i.imgur.com/KfQJc1A.jpg">
         </header>
         &nbsp;
+        <button type="button" class="btn btn-warning">Special</button>
+         &nbsp;
 
         <div class="outer-box">
         <div id="question">Welche Gesichtsform haben Sie?</div>
@@ -216,7 +218,7 @@
 
         </div>
 
-            <div class="buttons">
+            <div class="button-change">
             <div id="1" class="prev">Prev</div>
             <div id="2" class="next">Next</div>
 
@@ -269,9 +271,15 @@
             
             </div>
             
-        
-        
         <script>
+            
+            /*******Variables******/
+            
+            //boolean to check if button isClicked
+            var isClicked = false;
+            
+            //button to change page styles
+            var newStyles = document.querySelector(".btn-warning");
 
             //questions to be displayed onClick
             var questions=["Welche Gesichtsform haben Sie?","Welche Anforderungen stellan Sie an die Fassung?"]
@@ -289,11 +297,21 @@
             //elements to be manipulated - buttons
             var prev = document.getElementById("1");
             var next = document.getElementById("2");
+            
+            /******End Variables*******/
 
 
             //behavior when buttons are clicked
-            if(next.addEventListener("click", function(){
+            
+                if(!isClicked && newStyles.addEventListener("click", function(){
 
+
+               changeStyles();
+
+            }));
+            
+            
+            if(next.addEventListener("click", function(){
 
                 prev.style.display="initial";
                 next.style.display="none";
@@ -332,8 +350,25 @@
                 var image2 = document.querySelector(".img2").src="http://i.imgur.com/bVvfMhb.jpg";
                 var image3 = document.querySelector(".img3").src="http://i.imgur.com/jnN9ECI.jpg";
                 var image3 = document.querySelector(".img4").src="http://i.imgur.com/ha3FvJ5.jpg";
-
             }
+
+        
+            
+            function changeStyles(){
+                
+                isClicked = true;
+                
+                //change header
+             document.getElementsByTagName("header")[0].
+              style="opacity:0.5";
+                
+            document.querySelector(".outer-box").style="display:none";
+                
+            document.querySelector(".button-change").style="display:none";
+                
+            }
+            
+                
 
             /**End Outside Functions**/  
         </script>
