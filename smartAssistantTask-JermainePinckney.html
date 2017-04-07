@@ -310,6 +310,20 @@
 
             }));
             
+            //implement later
+            $(document).on('click', '.someclass', function() {
+  doStuff();
+});
+
+            
+                if(isClicked && newStyles.addEventListener("click", function(){
+
+
+               revertStyles();
+
+            }));
+           
+            
             
             if(next.addEventListener("click", function(){
 
@@ -353,24 +367,42 @@
             }
 
         
-            
+                
             function changeStyles(){
                 
-                isClicked = true;
+                isClicked = true; 
                 
-                //change header
              document.getElementsByTagName("header")[0].
-              style="opacity:0.5";
+              style="opacity:0.3";
                 
-            document.querySelector(".outer-box").style="display:none";
-                
-            document.querySelector(".button-change").style="display:none";
+            document.querySelector(".outer-box").removeAttribute("display");
+//                
+//            document.querySelector(".button-change").style="display:none";
+//            
+//            document.querySelector(".products").style="border:2px solid #FFDB94";
                 
             }
             
+            
+            function revertStyles(){
                 
-
+                isClicked = false;
+                           //change header
+                 console.log("change styles fired");
+                
+//             document.getElementsByTagName("header")[0].
+//              style="opacity:1.0";
+//                
+//            document.querySelector(".outer-box").style="display:initial";
+//                
+//            document.querySelector(".button-change").style="display:initial";
+//            
+//            document.querySelector(".products").style="border:2px solid #cccccc";
+//                
+            }
+            
             /**End Outside Functions**/  
+            
         </script>
 
             <!--JQuery-->
