@@ -166,6 +166,19 @@
             
            
             /*End product styles*/
+
+            /*jquery animation for help message*/
+
+            .help-message{
+
+                position:relative;
+                display: none;
+                font-size:20px;
+                color:rebeccapurple;
+            }
+
+            /* End jquery animation for help message*/
+
             
             /*Media Queries*/
             
@@ -188,7 +201,6 @@
                 } 
             
 }
-            
             /*End Media Queries*/
 
 
@@ -268,9 +280,12 @@
                 <!--End Second Glasses-->
         </div>
             
-            
             </div>
-            
+            &nbsp;
+            <div class="help">
+
+                <p class="help-message">Hi! Can I assist you with anything today?</p>
+            </div>
         <script>
             
             /*******Variables******/
@@ -357,10 +372,18 @@
            
            document.querySelector(".products").style="border:2px solid #FFDB94";
 
+           document.querySelector(".help-message").style="display:initial";
+
+           $(".help-message").animate({
+
+               left: "40%"
+           }, 2000);
+           
            document.querySelector(".btn-warning").onclick = revertStyles;
            
             }
             
+            /*Revert the styles for the "special button"*/
             
             function revertStyles(){
                 
@@ -377,10 +400,14 @@
            
            document.querySelector(".products").style="border:2px solid #cccccc";
 
+            document.querySelector(".help-message").style="visibility:hidden";
+
            
             document.querySelector(".btn-warning").onclick = onAndOff; 
             }
             
+            /*End revert function*/
+
             /**End Outside Functions**/  
             
         </script>
