@@ -21,11 +21,51 @@
                 flex-direction: column;
             }
 
+            /*Header styles*/
+
             .header{
 
-                align-self: center;
+                
+                background-color:purple;
+                height:200%;
+                
+                display: flex;
+                flex-direction: column;
             }
 
+            
+
+            .links{
+
+                margin:0.5em 1em 0.5em 0;
+                align-self: flex-end;
+
+            }
+
+            
+
+            .name p{
+
+                position: absolute;
+                color:white;
+                  margin:0.5em 0 0.5em 1em; 
+            }
+
+            .links li{
+
+                display: inline;
+                color:white;
+                list-style: none;
+                
+            }
+
+            .main{
+
+                align-self: center;
+                margin-top:1em;
+            }
+
+            /*End Header styles*/
 
             /*Carousel Styles*/
 
@@ -192,9 +232,23 @@
                     
                     width:50%
                 }
+
+                .links{
+
+                    width: 50%;
+                    display: block;
+                }
+
+                .name p{
+
+                    width: 50%;  
+                    font-size: 14px;
+                    position: absolute;
+                    top:40px;
+                }
                 
                 
-                .header img{
+                .main{
                     
                     width:70%;
                
@@ -210,9 +264,20 @@
     <body>
 
     <header class="header">
+        <div class="name">
+            <p>BRILLENBERATER</p>
+        </div>
+        <ul class="links">
 
-        <img src="http://i.imgur.com/KfQJc1A.jpg">
+            <li>Home |</li>
+            <li>Products |</li>
+            <li>About |</li>
+            <li>Contact</li>
+           
+        </ul>
+
         </header>
+        <img class="main" src="http://i.imgur.com/KfQJc1A.jpg">
         &nbsp;
         <button type="button" class="btn btn-warning">Special</button>
          &nbsp;
@@ -365,12 +430,16 @@
 
               document.getElementsByTagName("header")[0].
               style="opacity:0.3";
+
+              document.querySelector(".main").style="opacity:0.3";
                 
             document.querySelector(".outer-box").style="display:none";
                
            document.querySelector(".button-change").style="visibility:hidden";
            
            document.querySelector(".products").style="border:2px solid #FFDB94";
+
+           
 
            document.querySelector(".help-message").style="display:initial";
 
